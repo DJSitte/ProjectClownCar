@@ -21,4 +21,12 @@ MemoryStore.prototype.rateTrack = function(id, rating){
   track.rating += rating;
 }
 
+MemoryStore.prototype.removeFirstTrack = function(){
+  if(this.queue.length>0){
+    return this.queue.shift();
+  }else{
+    return null;
+  }
+}
+
 module.exports = MemoryStore;
