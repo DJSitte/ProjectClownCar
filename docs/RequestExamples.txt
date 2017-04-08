@@ -1,0 +1,27 @@
+get /queue
+response:
+{
+  tracks:[
+    {
+      albumart: "url",
+      title: "title",
+      artist: "artist",
+      album: "album",
+      votes: int
+    }
+  ]
+}
+
+post /queue
+body:
+{
+  source: enum(1=spotify, 2=youtube),
+  id: "identifier"
+}
+
+post /rate
+body:
+{
+  id: "identifier",
+  rating: int -> 1, -1
+}
